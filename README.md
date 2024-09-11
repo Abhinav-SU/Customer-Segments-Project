@@ -1,49 +1,71 @@
-# Content: Unsupervised Learning
-## Project: Creating Customer Segments
 
-### Install
+# Creating Customer Segments
 
-This project requires **Python 2.7** and the following Python libraries installed:
+## Overview
+This project applies unsupervised learning techniques to segment customers of a wholesale distributor. The goal is to use clustering algorithms like K-Means and Gaussian Mixture Models (GMM) to identify distinct customer segments based on their purchasing behavior.
+
+## Installation
+
+To run this project, you need **Python 3.x** and the following Python libraries installed:
 
 - [NumPy](http://www.numpy.org/)
 - [Pandas](http://pandas.pydata.org)
-- [matplotlib](http://matplotlib.org/)
+- [Matplotlib](http://matplotlib.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
 
-You will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html)
+You will also need to have software installed to run and execute a [Jupyter Notebook](http://jupyter.org/). If you don’t have Python installed, I recommend installing the [Anaconda distribution](https://www.anaconda.com/products/individual), which comes with these libraries and more pre-installed.
 
-If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included. Make sure that you select the Python 2.7 installer and not the Python 3.x installer. 
+## Code
 
-### Code
+The following files are included in this project:
+- `customer_segments.ipynb`: Main Jupyter Notebook where the analysis is performed.
+- `visuals.py`: Helper script for creating visualizations.
+- `customers.csv`: Dataset used for the project.
+- `report.html`: An HTML version of the report summarizing the findings.
 
-Template code is provided in the `customer_segments.ipynb` notebook file. You will also be required to use the included `visuals.py` Python file and the `customers.csv` dataset file to complete your work. While some code has already been implemented to get you started, you will need to implement additional functionality when requested to successfully complete the project. Note that the code included in `visuals.py` is meant to be used out-of-the-box and not intended for students to manipulate. If you are interested in how the visualizations are created in the notebook, please feel free to explore this Python file.
+## Running the Project
 
-### Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/Customer-Segments-Project.git
+   ```
 
-In a terminal or command window, navigate to the top-level project directory `customer_segments/` (that contains this README) and run one of the following commands:
+2. Navigate to the project directory:
+   ```bash
+   cd Customer-Segments-Project
+   ```
 
-```bash
-ipython notebook customer_segments.ipynb
-```  
-or
-```bash
-jupyter notebook customer_segments.ipynb
-```
-
-This will open the Jupyter Notebook software and project file in your browser.
+3. Open the Jupyter Notebook:
+   ```bash
+   jupyter notebook customer_segments.ipynb
+   ```
 
 ## Data
 
-The customer segments data is included as a selection of 440 data points collected on data found from clients of a wholesale distributor in Lisbon, Portugal. More information can be found on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Wholesale+customers).
+The dataset consists of 440 data points, representing annual spending in various product categories by customers of a wholesale distributor in Lisbon, Portugal. The dataset includes the following features:
 
-Note (m.u.) is shorthand for *monetary units*.
+- **Fresh**: Annual spending on fresh products (monetary units)
+- **Milk**: Annual spending on milk products
+- **Grocery**: Annual spending on grocery products
+- **Frozen**: Annual spending on frozen products
+- **Detergents_Paper**: Annual spending on detergents and paper products
+- **Delicatessen**: Annual spending on delicatessen products
+- **Channel**: Type of customer {Hotel/Restaurant/Cafe - 1, Retail - 2}
+- **Region**: Geographic region {Lisbon - 1, Oporto - 2, Other - 3}
 
-**Features**
-1) `Fresh`: annual spending (m.u.) on fresh products (Continuous); 
-2) `Milk`: annual spending (m.u.) on milk products (Continuous); 
-3) `Grocery`: annual spending (m.u.) on grocery products (Continuous); 
-4) `Frozen`: annual spending (m.u.) on frozen products (Continuous);
-5) `Detergents_Paper`: annual spending (m.u.) on detergents and paper products (Continuous);
-6) `Delicatessen`: annual spending (m.u.) on and delicatessen products (Continuous); 
-7) `Channel`: {Hotel/Restaurant/Cafe - 1, Retail - 2} (Nominal)
-8) `Region`: {Lisbon - 1, Oporto - 2, or Other - 3} (Nominal) 
+More information about the dataset can be found at the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Wholesale+customers).
+
+## Project Goals
+
+- **Preprocessing**: Clean and preprocess the dataset for unsupervised learning.
+- **Dimensionality Reduction**: Use PCA to reduce the number of features while preserving key information.
+- **Clustering**: Apply K-Means and GMM clustering algorithms to segment customers.
+- **Cluster Evaluation**: Analyze and interpret the customer segments to make actionable recommendations.
+
+## Results
+
+The clustering algorithms successfully segmented the customer base into distinct groups. The results showed that some customers tend to purchase primarily groceries and detergents, while others focus on fresh and frozen products. By identifying these segments, businesses can tailor their marketing strategies more effectively.
+
+## License
+
+This project is licensed under the MIT License.
